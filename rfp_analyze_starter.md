@@ -37,7 +37,15 @@ Create `/home/jackson/Documents/Sales Agent/Output/.rfp-state.json` with:
     "running_prompts": [],
     "completed_prompts": [],
     "failed_prompts": [],
-    "execution_log": []
+    "execution_log": [],
+    "session_stats": {
+      "total_prompts": 0,
+      "successful_prompts": 0,
+      "failed_prompts": 0,
+      "skipped_prompts": 0,
+      "total_tokens": 0,
+      "estimated_cost": 0.0
+    }
   },
   "user_inputs": {
     "opportunity_type": "",
@@ -71,6 +79,7 @@ LOG each step with timestamp:
 - **Output:** `opportunity_overview.md`
 - **Debug:** Log execution time, output file size, key extracted fields
 - **Status Update:** Mark phase 0 as "in_progress"
+- **STATE UPDATE:** Update .rfp-state.json with current_phase: 0, phase_status["0"]: "in_progress"
 
 **User Input Collection**
 Ask user sequentially (WAIT for each answer):
@@ -80,6 +89,7 @@ Ask user sequentially (WAIT for each answer):
 4. "Any additional context I should know?"
 
 Save responses to `user_inputs.json` and update state file.
+**STATE UPDATE:** Update .rfp-state.json with user_inputs values and mark phase_status["0"]: "completed", add to completed_prompts: ["opportunity_overview"], update execution_log with timestamp.
 
 **SOLE SOURCE DETECTION:**
 If user answers "sole-source" to question 1 OR "None" to question 2:
@@ -103,15 +113,20 @@ If user answers "sole-source" to question 1 OR "None" to question 2:
 - Output file creation confirmed
 - Error messages if any
 - Fallback trigger conditions
+- **TOKEN USAGE:** Estimate input tokens (RFP doc + prompt + context), count output tokens from file size, calculate prompt cost
 
 **CHECKPOINT:** Update state file after Phase 1 completion
+**STATE UPDATE:** Mark phase_status["1"]: "completed", update current_phase: 1, add all completed prompts to completed_prompts array, add execution_log entry with timestamp and phase completion details.
 
 ### STEP 5: Execute Phase 2A (Parallel Analysis)
 **PARALLEL BLOCK 2A:**
 - **PROMPT 6:** Pain Points (`/Prompts/Analysis/Pain points Prompt.md`) → `pain_points_analysis.md`
 - **PROMPT 7:** Inconsistency (`/Prompts/Analysis/Inconsistency Prompt.md`) → `inconsistency_analysis.md`
 
-**DEBUG:** Same tracking as Phase 1
+**DEBUG:** Same tracking as Phase 1 including token usage estimation
+
+**CHECKPOINT:** Update state file after Phase 2A completion
+**STATE UPDATE:** Mark phase_status["2A"]: "completed", update current_phase: "2A", add completed prompts to array, update execution_log.
 
 ### STEP 6: Execute Phase 2B (Competitive Analysis - Parallel per Competitor)
 **COMPETITIVE BID ONLY:** If competitors != ["None - Sole Source"], run for each competitor:
@@ -122,9 +137,10 @@ If user answers "sole-source" to question 1 OR "None" to question 2:
 
 **SOLE SOURCE:** If competitors = ["None - Sole Source"], SKIP this entire phase.
 
-**DEBUG:** Track each competitor pair, execution times, success rates
+**DEBUG:** Track each competitor pair, execution times, success rates, and cumulative token usage
 
 **CHECKPOINT:** Update state file after Phase 2B completion (or skip if sole source)
+**STATE UPDATE:** Mark phase_status["2B"]: "completed" (or "skipped" for sole source), update current_phase: "2B", add all competitor analysis prompts to completed_prompts, update execution_log with phase completion and competitor count.
 
 ### STEP 7: Execute Phase 3 (Sequential Strategy)
 **COMPETITIVE BID:**
@@ -136,14 +152,23 @@ If user answers "sole-source" to question 1 OR "None" to question 2:
 - **SKIP:** Prompts 10-11 (no competitive analysis needed)
 - **PROMPT 12:** Win Themes (`/Prompts/Analysis/win themes Prompt.md`) → `win_themes.md`
 
+**CHECKPOINT:** Update state file after Phase 3 completion
+**STATE UPDATE:** Mark phase_status["3"]: "completed", update current_phase: "3", add completed strategy prompts to completed_prompts (note skipped prompts for sole source), update execution_log.
+
 ### STEP 8: Execute Phase 4 (Sequential Decision)
+**STATE UPDATE:** Mark current_phase: "4", phase_status["4"]: "in_progress"
+
 **PROMPT 13:** Go/No-Go (`/Prompts/Summary/Go-no go Prompt.md`) → `go_no_go_decision.md`
 **PROMPT 14:** Executive Summary (`/Prompts/Summary/Executive_Summary.md`) → `executive_summary.md`
+
+**CHECKPOINT:** Update state file after Phase 4 completion
+**STATE UPDATE:** Mark phase_status["4"]: "completed", current_phase: "COMPLETED", add final prompts to completed_prompts, add final execution_log entry with session completion timestamp.
 
 ### STEP 9: Execution Summary & Debug Report
 
 **FINAL LOGGING:**
 1. Update state file with completion status
+**FINAL STATE UPDATE:** Set current_phase: "COMPLETED", add session end timestamp, calculate total execution time, finalize execution_log with summary statistics
 2. Generate execution summary with:
    - Total execution time
    - Phase breakdown times
@@ -151,6 +176,7 @@ If user answers "sole-source" to question 1 OR "None" to question 2:
    - Generated files list
    - Error summary
    - Performance metrics
+   - **TOKEN USAGE SUMMARY:** Total session tokens, cost estimates, per-phase breakdown
 
 **Create Debug Report:** `Output/execution_debug_report.md`
 ```markdown
@@ -178,6 +204,17 @@ If user answers "sole-source" to question 1 OR "None" to question 2:
 
 ## Errors and Issues
 [Detail any failures, fallbacks, or warnings]
+
+## Token Usage Analysis
+| Phase | Prompts | Est. Input Tokens | Est. Output Tokens | Total Tokens | Cost Estimate |
+|-------|---------|------------------|-------------------|--------------|---------------|
+| 0 | 1 | [X,XXX] | [XXX] | [X,XXX] | $X.XX |
+| 1 | 4 | [XX,XXX] | [X,XXX] | [XX,XXX] | $X.XX |
+| 2A | 2 | [XX,XXX] | [X,XXX] | [XX,XXX] | $X.XX |
+| 2B | [N] | [XX,XXX] | [X,XXX] | [XX,XXX] | $X.XX |
+| 3 | [2-3] | [XX,XXX] | [X,XXX] | [XX,XXX] | $X.XX |
+| 4 | 2 | [XX,XXX] | [X,XXX] | [XX,XXX] | $X.XX |
+| **TOTAL** | **[N]** | **[XXX,XXX]** | **[XX,XXX]** | **[XXX,XXX]** | **$XX.XX** |
 
 ## Performance Notes
 [Parallel vs sequential timing comparisons]
