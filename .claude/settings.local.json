@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv:*)",
+      "Bash(touch:*)",
+      "Bash(rm:*)",
+      "Bash(ls:*)"
+    ],
+    "deny": []
+  }
+}
