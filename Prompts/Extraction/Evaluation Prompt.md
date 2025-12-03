@@ -19,6 +19,8 @@ OUTPUT FORMAT:
 - Use tables if source uses tables
 - "Not specified" for absent elements — do not infer
 
+OUTPUT: Save as "Evaluation.md" in the output folder.
+
 STRATEGIC INSIGHTS (add at end):
 - Where is the weight concentrated? (technical vs price vs experience)
 - Any unusual weightings or criteria?
