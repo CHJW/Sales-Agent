@@ -1,0 +1,41 @@
+{
+  "session": {
+    "id": "rfp_analysis_20251203_135240",
+    "started": "2025-12-03T13:52:40Z",
+    "command": "rfp-analyze --all --debug",
+    "mode": "parallel_with_fallback"
+  },
+  "execution": {
+    "current_phase": "COMPLETED",
+    "phase_status": {
+      "0": "completed",
+      "1": "completed", 
+      "2A": "completed",
+      "2B": "completed",
+      "3": "completed",
+      "4": "completed"
+    },
+    "running_prompts": [],
+    "completed_prompts": ["opportunity_overview", "requirements_extract", "questions_extract", "timeline_extract", "evaluation_extract"],
+    "failed_prompts": [],
+    "execution_log": []
+  },
+  "user_inputs": {
+    "competitors": ["TCS", "IBM", "Deloitte"],
+    "win_themes": ["Existing relationship with DCJ on SAP project", "Connection with leadership"],
+    "additional_context": "We're weak on case studies in salesforce in ANZ"
+  },
+  "debug": {
+    "verbose": true,
+    "log_file": "rfp_analysis_debug.log",
+    "checkpoint_interval": "per_prompt",
+    "error_details": [
+      {
+        "timestamp": "2025-12-03T13:52:40Z",
+        "type": "defect_correction",
+        "description": "Corrected output structure - all files go directly to Output folder, no subfolders needed",
+        "corrective_action": "Removed subfolder creation requirement"
+      }
+    ]
+  }
+}
