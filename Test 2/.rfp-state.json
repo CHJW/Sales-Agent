@@ -1,0 +1,84 @@
+{
+  "session": {
+    "id": "rfp_analysis_20251204_095920",
+    "started": "2024-12-04T09:59:20Z",
+    "command": "rfp-analyze --all --debug",
+    "mode": "parallel_with_fallback"
+  },
+  "execution": {
+    "current_phase": "COMPLETED",
+    "phase_status": {
+      "0": "completed",
+      "1": "completed", 
+      "2A": "completed",
+      "2B": "completed",
+      "3": "completed",
+      "4": "completed"
+    },
+    "running_prompts": [],
+    "completed_prompts": ["opportunity_overview", "requirements_extract", "questions_extract", "timeline_extract", "evaluation_extract", "pain_points_analysis", "inconsistency_analysis", "competitor_Capgemini", "pricing_Capgemini", "competitor_Deloitte", "pricing_Deloitte", "overall_competitor_analysis", "overall_pricing_analysis", "win_themes", "go_no_go_decision", "executive_summary"],
+    "failed_prompts": [],
+    "execution_log": [
+      {
+        "timestamp": "2024-12-04T09:59:20Z",
+        "event": "session_initialized",
+        "details": "RFP Analysis Agent workflow started"
+      },
+      {
+        "timestamp": "2024-12-04T10:02:05Z",
+        "event": "phase_0_completed",
+        "details": "Opportunity Overview analysis completed, user inputs collected"
+      },
+      {
+        "timestamp": "2024-12-04T10:51:30Z",
+        "event": "phase_1_completed",
+        "details": "All 4 extraction prompts executed successfully in parallel"
+      },
+      {
+        "timestamp": "2024-12-04T10:56:45Z",
+        "event": "phase_2a_completed",
+        "details": "Pain Points and Inconsistency analysis completed in parallel"
+      },
+      {
+        "timestamp": "2024-12-04T11:05:45Z",
+        "event": "phase_2b_completed",
+        "details": "Competitive analysis completed for Capgemini and Deloitte (4 prompts total)"
+      },
+      {
+        "timestamp": "2024-12-04T11:23:00Z",
+        "event": "phase_3_completed",
+        "details": "Sequential strategy analysis completed (3 prompts: Overall Competitor, Overall Pricing, Win Themes)"
+      },
+      {
+        "timestamp": "2024-12-04T13:16:50Z",
+        "event": "phase_4_completed",
+        "details": "Sequential decision analysis completed (2 prompts: Go/No-Go Decision, Executive Summary)"
+      },
+      {
+        "timestamp": "2025-12-04T13:26:55+1100",
+        "event": "session_completed",
+        "details": "All 16 prompts executed successfully. Total execution time: 3 hours 27 minutes"
+      }
+    ],
+    "session_stats": {
+      "total_prompts": 16,
+      "successful_prompts": 16,
+      "failed_prompts": 0,
+      "skipped_prompts": 0,
+      "total_tokens": 285000,
+      "estimated_cost": 14.25
+    }
+  },
+  "user_inputs": {
+    "opportunity_type": "competitive",
+    "competitors": ["Capgemini", "Deloitte"],
+    "win_themes": "no",
+    "additional_context": "no"
+  },
+  "debug": {
+    "verbose": true,
+    "log_file": "rfp_analysis_debug.log",
+    "checkpoint_interval": "per_prompt",
+    "error_details": []
+  }
+}
