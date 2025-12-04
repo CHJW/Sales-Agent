@@ -1,0 +1,17 @@
+{
+  "query_id": "eb80f877",
+  "timestamp": "2025-12-04T05:59:31.237818",
+  "query": "evaluation scoring criteria selection process assessment",
+  "section_filter": "evaluation",
+  "results": {
+    "chunks_found": 1,
+    "total_time_seconds": 17.882,
+    "db_connection_time": 0.205,
+    "model_load_time": 1.72,
+    "search_time": 0.04
+  },
+  "performance": {
+    "chunks_per_second": 0.06,
+    "search_efficiency": "fast"
+  }
+}

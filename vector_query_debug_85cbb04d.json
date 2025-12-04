@@ -1,0 +1,17 @@
+{
+  "query_id": "85cbb04d",
+  "timestamp": "2025-12-04T06:01:16.198525",
+  "query": "challenges issues concerns problems difficulties",
+  "section_filter": null,
+  "results": {
+    "chunks_found": 14,
+    "total_time_seconds": 17.648,
+    "db_connection_time": 0.215,
+    "model_load_time": 1.229,
+    "search_time": 0.04
+  },
+  "performance": {
+    "chunks_per_second": 0.79,
+    "search_efficiency": "fast"
+  }
+}
