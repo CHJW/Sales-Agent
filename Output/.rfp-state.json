@@ -1,49 +1,145 @@
 {
   "session": {
-    "id": "rfp_analysis_20251204_153013",
-    "started": "2025-12-04 15:30:13",
+    "id": "rfp_analysis_20251204_052200",
+    "started": "2025-12-04T05:22:00Z",
+    "completed": "2025-12-04T06:15:00Z",
     "command": "rfp-analyze --all --debug",
     "mode": "parallel_with_fallback"
   },
   "execution": {
-    "current_phase": 0,
+    "current_phase": 4,
     "phase_status": {
-      "0": "pending",
-      "1": "pending", 
-      "2A": "pending",
-      "2B": "pending",
-      "3": "pending",
-      "4": "pending"
+      "0": "completed",
+      "1": "completed",
+      "2A": "completed",
+      "2B": "skipped",
+      "3": "completed",
+      "4": "completed"
     },
     "running_prompts": [],
-    "completed_prompts": [],
+    "completed_prompts": [
+      "Opportunity_Overview",
+      "Requirements_Extract",
+      "Questions_Extract",
+      "Timeline_Extract",
+      "Evaluation_Extract",
+      "Pain_Points_Analysis",
+      "Inconsistency_Analysis",
+      "Overall_Competitor_Analysis",
+      "Overall_Pricing_Analysis",
+      "Win_Themes",
+      "Go_No_Go_Decision",
+      "Executive_Summary"
+    ],
     "failed_prompts": [],
+    "skipped_prompts": ["Competitor_Analysis_Individual", "Pricing_Individual"],
     "execution_log": [
       {
-        "timestamp": "2025-12-04 15:30:13",
+        "timestamp": "2025-12-04T05:22:00Z",
         "action": "session_initialized",
         "details": "RFP analysis session started with full debug mode"
+      },
+      {
+        "timestamp": "2025-12-04T05:45:00Z",
+        "action": "vector_db_dependencies_installed",
+        "details": "Successfully installed chromadb, sentence-transformers, PyPDF2, python-docx, pandas, openpyxl and all dependencies"
+      },
+      {
+        "timestamp": "2025-12-04T05:46:00Z",
+        "action": "vector_db_setup_complete",
+        "details": "Vector database created with 14 chunks from RFP documents (PDF: 6 chunks, DOCX: 8 chunks)"
+      },
+      {
+        "timestamp": "2025-12-04T05:57:00Z",
+        "action": "phase_0_completed",
+        "details": "Opportunity Overview extracted and saved"
+      },
+      {
+        "timestamp": "2025-12-04T06:00:00Z",
+        "action": "phase_1_completed",
+        "details": "All 4 extraction prompts completed in parallel (Requirements, Questions, Timeline, Evaluation)"
+      },
+      {
+        "timestamp": "2025-12-04T06:05:00Z",
+        "action": "phase_2A_completed",
+        "details": "Pain Points and Inconsistency analysis completed in parallel"
+      },
+      {
+        "timestamp": "2025-12-04T06:06:00Z",
+        "action": "phase_2B_skipped",
+        "details": "No competitors specified in user inputs - competitive analysis skipped"
+      },
+      {
+        "timestamp": "2025-12-04T06:10:00Z",
+        "action": "phase_3_completed",
+        "details": "Overall Competitor Analysis, Pricing Analysis, and Win Themes completed"
+      },
+      {
+        "timestamp": "2025-12-04T06:15:00Z",
+        "action": "phase_4_completed",
+        "details": "Go/No-Go Decision and Executive Summary generated"
+      },
+      {
+        "timestamp": "2025-12-04T06:15:00Z",
+        "action": "session_completed",
+        "details": "RFP analysis complete - CONDITIONAL GO recommendation"
       }
     ],
     "session_stats": {
-      "total_prompts": 0,
-      "successful_prompts": 0,
+      "total_prompts": 12,
+      "successful_prompts": 12,
       "failed_prompts": 0,
-      "skipped_prompts": 0,
-      "total_tokens": 0,
-      "estimated_cost": 0.0
+      "skipped_prompts": 2,
+      "total_chunks_processed": 14,
+      "vector_queries": 7,
+      "estimated_duration_minutes": 53
     }
   },
   "user_inputs": {
-    "opportunity_type": "",
+    "opportunity_type": "Cloud Services Transformation",
     "competitors": [],
     "win_themes": [],
     "additional_context": ""
+  },
+  "outputs": {
+    "summary": {
+      "opportunity_overview": "summary/opportunity_overview.md",
+      "overall_competitor_analysis": "summary/overall_competitor_analysis.md",
+      "overall_pricing_analysis": "summary/overall_pricing_analysis.md",
+      "win_themes": "summary/Win Themes.md",
+      "go_no_go_decision": "summary/go_no_go_decision.md",
+      "executive_summary": "summary/executive_summary.md"
+    },
+    "extracts": {
+      "requirements": "extracts/requirements_extract.md",
+      "questions": "extracts/questions_extract.md",
+      "timeline": "extracts/timeline_extract.md",
+      "evaluation": "extracts/evaluation_extract.md"
+    },
+    "analysis": {
+      "pain_points": "analysis/pain_points_analysis.md",
+      "inconsistency": "analysis/Inconsistency.md",
+      "competitive_note": "analysis/competitive_analysis_note.md"
+    }
+  },
+  "decision": {
+    "recommendation": "CONDITIONAL GO",
+    "opportunity_score": 72,
+    "win_probability": "60-70%",
+    "target_price": 550000,
+    "conditions": [
+      "Confirm key resource availability",
+      "Submit clarification questions",
+      "Obtain pricing approval",
+      "Secure 3 government references"
+    ]
   },
   "debug": {
     "verbose": true,
     "log_file": "rfp_analysis_debug.log",
     "checkpoint_interval": "per_prompt",
-    "error_details": []
+    "error_details": [],
+    "vector_query_fix_applied": true,
+    "fix_description": "Updated vector_query.py to use query_embeddings instead of query_texts to match embedding dimensions"
   }
 }

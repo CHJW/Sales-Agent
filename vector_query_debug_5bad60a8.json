@@ -1,0 +1,17 @@
+{
+  "query_id": "5bad60a8",
+  "timestamp": "2025-12-04T05:58:20.195333",
+  "query": "requirements specifications mandatory must have features criteria deliverables",
+  "section_filter": "requirements",
+  "results": {
+    "chunks_found": 5,
+    "total_time_seconds": 18.614,
+    "db_connection_time": 0.207,
+    "model_load_time": 1.23,
+    "search_time": 0.044
+  },
+  "performance": {
+    "chunks_per_second": 0.27,
+    "search_efficiency": "fast"
+  }
+}

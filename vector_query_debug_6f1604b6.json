@@ -1,0 +1,17 @@
+{
+  "query_id": "6f1604b6",
+  "timestamp": "2025-12-04T05:59:08.426515",
+  "query": "deadline timeline schedule submission dates milestones",
+  "section_filter": "timeline",
+  "results": {
+    "chunks_found": 2,
+    "total_time_seconds": 18.547,
+    "db_connection_time": 0.211,
+    "model_load_time": 1.597,
+    "search_time": 0.043
+  },
+  "performance": {
+    "chunks_per_second": 0.11,
+    "search_efficiency": "fast"
+  }
+}

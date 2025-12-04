@@ -1,0 +1,17 @@
+{
+  "query_id": "54ee026d",
+  "timestamp": "2025-12-04T05:58:43.824618",
+  "query": "questions inquiries clarifications RFI responses",
+  "section_filter": null,
+  "results": {
+    "chunks_found": 12,
+    "total_time_seconds": 18.352,
+    "db_connection_time": 0.212,
+    "model_load_time": 1.176,
+    "search_time": 0.042
+  },
+  "performance": {
+    "chunks_per_second": 0.65,
+    "search_efficiency": "fast"
+  }
+}

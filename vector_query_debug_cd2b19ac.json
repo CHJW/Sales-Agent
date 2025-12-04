@@ -1,0 +1,17 @@
+{
+  "query_id": "cd2b19ac",
+  "timestamp": "2025-12-04T06:01:39.967705",
+  "query": "inconsistencies conflicts contradictions discrepancies",
+  "section_filter": null,
+  "results": {
+    "chunks_found": 14,
+    "total_time_seconds": 18.459,
+    "db_connection_time": 0.216,
+    "model_load_time": 1.233,
+    "search_time": 0.037
+  },
+  "performance": {
+    "chunks_per_second": 0.76,
+    "search_efficiency": "fast"
+  }
+}

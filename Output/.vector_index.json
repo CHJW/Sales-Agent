@@ -1,0 +1,17 @@
+{
+  "created": "2025-12-04T05:47:08.790178",
+  "total_chunks": 14,
+  "source_files": [
+    "test_pricing_matrix.csv",
+    "test rfp document.docx",
+    "test rfp document.pdf"
+  ],
+  "chunk_stats": {
+    "evaluation": 1,
+    "timeline": 2,
+    "requirements": 5,
+    "pricing": 3,
+    "general": 2,
+    "technical": 1
+  }
+}
