@@ -1,8 +1,20 @@
-Analyse this RFP for buyer pain points.
+## Auto-Execute Vector Query (Agent Instructions)
+
+**BEFORE PROCESSING - AUTO-EXECUTE THIS COMMAND:**
+```bash
+python3 scripts/vector_query.py --query="challenges issues concerns problems difficulties" --top_k=15 --output="temp_pain_points_context.md"
+```
+
+**INPUT:** Use contents of `temp_pain_points_context.md` instead of full RFP documents
+
+---
+
+Analyse the retrieved RFP chunks for buyer pain points.
 
 Pain points may appear as: challenges, desired outcomes, business objectives, project drivers, success criteria, or embedded in requirements. Invert positive framing (e.g., "improve efficiency" → current inefficiency is a pain point).
 
-OUTPUT: Save as "Pain Point.md" in the output folder.
+OUTPUT: Save as "pain_points_analysis.md" in the output folder.
+Note at end: "Analyzed from [X] vector chunks covering pain points and challenges"
 Output in two sections:
 
 ## 1. EXPLICIT PAIN POINTS

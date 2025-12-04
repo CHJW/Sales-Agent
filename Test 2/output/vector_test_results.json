@@ -1,0 +1,82 @@
+{
+  "test_summary": {
+    "total_files": 7,
+    "total_chunks": 2899,
+    "section_distribution": {
+      "pricing": 149,
+      "general": 1734,
+      "timeline": 106,
+      "evaluation": 263,
+      "requirements": 344,
+      "technical": 303
+    },
+    "file_stats": {
+      "Test 2/Input/DCJ_Attachment_A_NonPrice_Response.md": 553,
+      "Test 2/Input/DCJ_Attachment_B_Specification.md": 529,
+      "Test 2/Input/DCJ_Attachment_C_Cyber_Security.md": 346,
+      "Test 2/Input/DCJ_Attachment_D_Departures.md": 244,
+      "Test 2/Input/DCJ_Attachment_E_Pricing.md": 106,
+      "Test 2/Input/DCJ_RFP_1of2_Particulars_Conditions.md": 479,
+      "Test 2/Input/DCJ_RFP_2of2_Deliverables.md": 642
+    }
+  },
+  "sample_chunks": [
+    {
+      "id": "DCJ_Attachment_A_NonPrice_Response.md_chunk_0",
+      "text": "# ATTACHMENT A - NON-PRICE RESPONSE",
+      "metadata": {
+        "source_file": "DCJ_Attachment_A_NonPrice_Response.md",
+        "section_type": "pricing",
+        "chunk_size": 35,
+        "full_file_path": "Test 2/Input/DCJ_Attachment_A_NonPrice_Response.md"
+      }
+    },
+    {
+      "id": "DCJ_Attachment_A_NonPrice_Response.md_chunk_1",
+      "text": "**NSW Department of Communities and Justice**",
+      "metadata": {
+        "source_file": "DCJ_Attachment_A_NonPrice_Response.md",
+        "section_type": "general",
+        "chunk_size": 47,
+        "full_file_path": "Test 2/Input/DCJ_Attachment_A_NonPrice_Response.md"
+      }
+    },
+    {
+      "id": "DCJ_Attachment_A_NonPrice_Response.md_chunk_2",
+      "text": "**Salesforce Application Managed Services**\n\n---",
+      "metadata": {
+        "source_file": "DCJ_Attachment_A_NonPrice_Response.md",
+        "section_type": "general",
+        "chunk_size": 48,
+        "full_file_path": "Test 2/Input/DCJ_Attachment_A_NonPrice_Response.md"
+      }
+    },
+    {
+      "id": "DCJ_Attachment_A_NonPrice_Response.md_chunk_3",
+      "text": "**RFP Reference:** DCJ-ICT-2025-SF-AMS",
+      "metadata": {
+        "source_file": "DCJ_Attachment_A_NonPrice_Response.md",
+        "section_type": "general",
+        "chunk_size": 40,
+        "full_file_path": "Test 2/Input/DCJ_Attachment_A_NonPrice_Response.md"
+      }
+    },
+    {
+      "id": "DCJ_Attachment_A_NonPrice_Response.md_chunk_4",
+      "text": "**Issue Date:** 3 December 2024",
+      "metadata": {
+        "source_file": "DCJ_Attachment_A_NonPrice_Response.md",
+        "section_type": "general",
+        "chunk_size": 33,
+        "full_file_path": "Test 2/Input/DCJ_Attachment_A_NonPrice_Response.md"
+      }
+    }
+  ],
+  "test_queries": [
+    "requirements specifications mandatory must have features",
+    "deadline timeline schedule submission dates",
+    "evaluation scoring criteria selection process",
+    "pricing cost budget payment terms",
+    "technical architecture system specifications"
+  ]
+}

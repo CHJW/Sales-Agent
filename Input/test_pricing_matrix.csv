@@ -1,0 +1,15 @@
+Item,Description,Unit Cost,Quantity,Total Cost,Notes
+Software License,Core platform license,50000,1,50000,Annual subscription
+Implementation,Setup and configuration,120000,1,120000,One-time fee  
+Training,User and admin training,15000,3,45000,Per session
+Support,24/7 technical support,25000,1,25000,Annual fee
+Integration,API development,80000,1,80000,Custom integrations
+Data Migration,Legacy system migration,35000,1,35000,One-time service
+Security Audit,Compliance review,12000,1,12000,Required certification
+Project Management,Dedicated PM,150000,1,150000,Full project duration
+Testing,User acceptance testing,20000,1,20000,Includes automation
+Documentation,System documentation,8000,1,8000,User and admin guides
+Hardware,Cloud infrastructure,30000,1,30000,Annual hosting costs
+Maintenance,Bug fixes and updates,40000,1,40000,Annual maintenance
+Total Phase 1,,,,,615000,Initial implementation
+Total Annual,,,,,95000,Recurring costs

@@ -1,0 +1,17 @@
+{
+  "query_id": "test123",
+  "timestamp": "2024-12-04T15:20:00.000Z",
+  "query": "What are the mandatory requirements for cloud services?",
+  "section_filter": "requirements",
+  "results": {
+    "chunks_found": 8,
+    "total_time_seconds": 0.245,
+    "db_connection_time": 0.015,
+    "model_load_time": 0.185,
+    "search_time": 0.045
+  },
+  "performance": {
+    "chunks_per_second": 32.65,
+    "search_efficiency": "fast"
+  }
+}

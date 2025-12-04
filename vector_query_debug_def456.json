@@ -1,0 +1,17 @@
+{
+  "query_id": "def456",
+  "timestamp": "2024-12-04T15:22:45.000Z",
+  "query": "evaluation criteria and scoring methodology",
+  "section_filter": "evaluation", 
+  "results": {
+    "chunks_found": 12,
+    "total_time_seconds": 0.320,
+    "db_connection_time": 0.018,
+    "model_load_time": 0.195,
+    "search_time": 0.107
+  },
+  "performance": {
+    "chunks_per_second": 37.50,
+    "search_efficiency": "moderate"
+  }
+}

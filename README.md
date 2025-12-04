@@ -78,10 +78,16 @@ Sales Agent/
 │       ├── Go-no go Prompt.md
 │       ├── Executive_Summary.md
 │       └── Opportunity_Overview.md
-├── setup_vector_db.py             # Vector database setup (auto-executed)
-├── vector_query.py                # Smart content retrieval (auto-executed)
+├── scripts/                        # Python automation scripts
+│   ├── setup_vector_db.py         # Vector database setup (auto-executed)
+│   ├── vector_query.py            # Smart content retrieval (auto-executed)
+│   ├── vector_query_templates.py  # Dynamic query generation
+│   ├── test_vector_concept.py     # Testing framework
+│   ├── test_auto_execution.py     # Workflow validation
+│   └── demo_vector_workflow.py    # Demo and examples
 ├── rfp_analyze_starter.md          # Main execution prompt
-└── USER_INSTRUCTIONS.md           # Detailed user guide
+├── USER_INSTRUCTIONS.md           # Detailed user guide
+└── README.md                       # Project documentation
 ```
 
 ## 🗓 Development Timeline
@@ -216,13 +222,13 @@ QUERY_TEMPLATES = {
 ### Automated Testing
 ```bash
 # Test vector database concept
-python test_vector_concept.py ./Input
+python scripts/test_vector_concept.py ./Input
 
 # Test auto-execution workflow
-python test_auto_execution.py
+python scripts/test_auto_execution.py
 
 # Test document processing
-python demo_vector_workflow.py
+python scripts/demo_vector_workflow.py
 ```
 
 ### Manual Testing Checklist
@@ -274,13 +280,13 @@ pip install --break-system-packages chromadb sentence-transformers
 **Large File Processing Slow**  
 ```bash
 # Solution: Process in batches or increase chunk size
-python setup_vector_db.py --input="./Input" --chunk_size=1500
+python scripts/setup_vector_db.py --input="./Input" --chunk_size=1500
 ```
 
 **Missing Content in Analysis**
 ```bash
 # Solution: Expand query terms or increase top_k
-python vector_query.py --query="your expanded terms" --top_k=20
+python scripts/vector_query.py --query="your expanded terms" --top_k=20
 ```
 
 ## 📝 License

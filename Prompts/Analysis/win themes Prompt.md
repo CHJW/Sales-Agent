@@ -1,3 +1,14 @@
+## Auto-Execute Vector Query (Agent Instructions)
+
+**BEFORE PROCESSING - AUTO-EXECUTE THIS COMMAND:**
+```bash
+python3 scripts/vector_query.py --query="competitive advantage themes positioning differentiation" --top_k=15 --output="temp_win_themes_context.md"
+```
+
+**INPUT:** Use contents of `temp_win_themes_context.md` instead of full RFP documents
+
+---
+
 TASK: Generate 3-5 differentiated win themes for Accenture's response to this RFP.
 
 INPUTS (extract from attached documents):

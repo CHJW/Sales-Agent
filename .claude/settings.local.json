@@ -6,7 +6,10 @@
       "Bash(rm:*)",
       "Bash(ls:*)",
       "Bash(mkdir:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(python:*)",
+      "Bash(nix-shell:*)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }

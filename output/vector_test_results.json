@@ -1,0 +1,82 @@
+{
+  "test_summary": {
+    "total_files": 7,
+    "total_chunks": 2899,
+    "section_distribution": {
+      "general": 1734,
+      "timeline": 106,
+      "technical": 303,
+      "evaluation": 263,
+      "pricing": 149,
+      "requirements": 344
+    },
+    "file_stats": {
+      "Input/DCJ_RFP_1of2_Particulars_Conditions.md": 479,
+      "Input/DCJ_RFP_2of2_Deliverables.md": 642,
+      "Input/DCJ_Attachment_A_NonPrice_Response.md": 553,
+      "Input/DCJ_Attachment_B_Specification.md": 529,
+      "Input/DCJ_Attachment_C_Cyber_Security.md": 346,
+      "Input/DCJ_Attachment_D_Departures.md": 244,
+      "Input/DCJ_Attachment_E_Pricing.md": 106
+    }
+  },
+  "sample_chunks": [
+    {
+      "id": "DCJ_RFP_1of2_Particulars_Conditions.md_chunk_0",
+      "text": "# REQUEST FOR PROPOSAL (RFP) - PART 1 OF 2",
+      "metadata": {
+        "source_file": "DCJ_RFP_1of2_Particulars_Conditions.md",
+        "section_type": "general",
+        "chunk_size": 42,
+        "full_file_path": "Input/DCJ_RFP_1of2_Particulars_Conditions.md"
+      }
+    },
+    {
+      "id": "DCJ_RFP_1of2_Particulars_Conditions.md_chunk_1",
+      "text": "## PARTICULARS AND CONDITIONS",
+      "metadata": {
+        "source_file": "DCJ_RFP_1of2_Particulars_Conditions.md",
+        "section_type": "general",
+        "chunk_size": 29,
+        "full_file_path": "Input/DCJ_RFP_1of2_Particulars_Conditions.md"
+      }
+    },
+    {
+      "id": "DCJ_RFP_1of2_Particulars_Conditions.md_chunk_2",
+      "text": "**NSW Department of Communities and Justice**",
+      "metadata": {
+        "source_file": "DCJ_RFP_1of2_Particulars_Conditions.md",
+        "section_type": "general",
+        "chunk_size": 47,
+        "full_file_path": "Input/DCJ_RFP_1of2_Particulars_Conditions.md"
+      }
+    },
+    {
+      "id": "DCJ_RFP_1of2_Particulars_Conditions.md_chunk_3",
+      "text": "**Salesforce Application Managed Services**\n\n---",
+      "metadata": {
+        "source_file": "DCJ_RFP_1of2_Particulars_Conditions.md",
+        "section_type": "general",
+        "chunk_size": 48,
+        "full_file_path": "Input/DCJ_RFP_1of2_Particulars_Conditions.md"
+      }
+    },
+    {
+      "id": "DCJ_RFP_1of2_Particulars_Conditions.md_chunk_4",
+      "text": "**RFP Reference:** DCJ-ICT-2025-SF-AMS",
+      "metadata": {
+        "source_file": "DCJ_RFP_1of2_Particulars_Conditions.md",
+        "section_type": "general",
+        "chunk_size": 40,
+        "full_file_path": "Input/DCJ_RFP_1of2_Particulars_Conditions.md"
+      }
+    }
+  ],
+  "test_queries": [
+    "requirements specifications mandatory must have features",
+    "deadline timeline schedule submission dates",
+    "evaluation scoring criteria selection process",
+    "pricing cost budget payment terms",
+    "technical architecture system specifications"
+  ]
+}

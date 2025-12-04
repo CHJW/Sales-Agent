@@ -1,10 +1,21 @@
-You are a pricing strategist analysing how [COMPETITOR_NAME] would likely price the attached RFP.
+## Auto-Execute Vector Query (Agent Instructions)
+
+**BEFORE PROCESSING - AUTO-EXECUTE THIS COMMAND:**
+```bash
+python3 scripts/vector_query.py --query="pricing cost budget payment commercial terms" --section="pricing" --top_k=12 --output="temp_pricing_context.md"
+```
+
+**INPUT:** Use contents of `temp_pricing_context.md` instead of full RFP documents
+
+---
+
+You are a pricing strategist analysing how [COMPETITOR_NAME] would likely price this RFP.
 
 ## Task
 Estimate [COMPETITOR_NAME]'s likely pricing approach and total bid for this opportunity.
 
 ## Instructions
-1. Extract from attached RFP: scope, phases, timeline, complexity, client type, region
+1. Extract from retrieved pricing chunks: scope, phases, timeline, complexity, client type, region
 2. Research [COMPETITOR_NAME]'s typical pricing model, delivery mix, rate card positioning
 3. Build a pricing estimate from their perspective
 

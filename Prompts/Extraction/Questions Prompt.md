@@ -1,4 +1,15 @@
-TASK: Extract all questions, requirements, and response items from the attached RFP/RFI document(s).
+## Auto-Execute Vector Query (Agent Instructions)
+
+**BEFORE PROCESSING - AUTO-EXECUTE THIS COMMAND:**
+```bash
+python3 scripts/vector_query.py --query="questions inquiries clarifications RFI responses" --top_k=12 --output="temp_questions_context.md"
+```
+
+**INPUT:** Use contents of `temp_questions_context.md` instead of full RFP documents
+
+---
+
+TASK: Extract all questions, requirements, and response items from the retrieved question chunks.
 
 DEFINITIONS:
 - "Response Item" = Anything requiring vendor input, including:
@@ -61,4 +72,5 @@ PRIORITY FLAGS (add to Notes):
 
 Be exhaustive. Include everything requiring vendor response, even if uncertain—flag uncertain items in Notes.
 
-OUTPUT: Save as "Questions.md" in the output folder.
+OUTPUT: Save as "questions_extract.md" in the output folder.
+Note at end: "Extracted from [X] vector chunks covering questions and response requirements"

@@ -62,13 +62,18 @@ Create `/home/jackson/Documents/Sales Agent/Output/.rfp-state.json` with:
 }
 ```
 
-### STEP 2: Pre-Execution Validation
+### STEP 2: Vector Database Setup (Auto-Executed)
+**EXECUTE AUTOMATICALLY - NO USER ACTION REQUIRED**
+
 LOG each step with timestamp:
 1. ✅ Verify Input folder exists and contains RFP documents
-2. ✅ Verify all prompt files exist in Prompts folder structure
-3. ✅ Create Output subdirectories: `/extracts`, `/analysis`, `/summary`
-4. ✅ Test write permissions to Output folder
-5. ✅ Log initial state to debug log
+2. 🔧 **AUTO-EXECUTE:** Check if vector database exists (`./output/.vector_ready`)
+3. 🔧 **AUTO-EXECUTE:** If not exists, run: `python3 scripts/setup_vector_db.py --input="./Input" --output="./output"`
+4. ✅ Verify all prompt files exist in Prompts folder structure  
+5. ✅ Create Output subdirectories: `/extracts`, `/analysis`, `/summary`
+6. ✅ Test write permissions to Output folder
+7. ✅ Log initial state to debug log
+8. ✅ Log vector database status and chunk statistics
 
 ### STEP 3: Execute Phase 0 (Sequential)
 **Phase 0: Context & Setup**
@@ -98,14 +103,22 @@ If user answers "sole-source" to question 1 OR "None" to question 2:
 - SKIP Phase 3 prompts 10-11 (Overall Competitor and Pricing Analysis)
 - Proceed directly from Phase 2A to Phase 3 prompt 12 (Win Themes)
 
-### STEP 4: Execute Phase 1 (Parallel Extraction)
-**Attempt parallel execution, fallback to sequential if any fail**
+### STEP 4: Execute Phase 1 (Vector-Enhanced Parallel Extraction)
+**AUTO-EXECUTE vector queries for each extraction prompt - NO USER ACTION REQUIRED**
 
-**PARALLEL BLOCK 1:**
-- **PROMPT 2:** Requirements (`/Prompts/Extraction/Requirements Prompt.md`) → `requirements_extract.md`
-- **PROMPT 3:** Questions (`/Prompts/Extraction/Questions Prompt.md`) → `questions_extract.md`  
-- **PROMPT 4:** Timeline (`/Prompts/Extraction/Timeline Prompt.md`) → `timeline_extract.md`
-- **PROMPT 5:** Evaluation (`/Prompts/Extraction/Evaluation Prompt.md`) → `evaluation_extract.md`
+**PARALLEL BLOCK 1 (Vector-Enhanced):**
+- **PROMPT 2:** Requirements 
+  - AUTO-EXECUTE: `python3 scripts/vector_query.py --query="requirements specifications mandatory must have features criteria deliverables" --section="requirements" --top_k=15 --output="temp_requirements_context.md"`
+  - Process: `/Prompts/Extraction/Requirements Prompt.md` using retrieved chunks → `requirements_extract.md`
+- **PROMPT 3:** Questions
+  - AUTO-EXECUTE: `python3 scripts/vector_query.py --query="questions inquiries clarifications RFI responses" --top_k=10 --output="temp_questions_context.md"`
+  - Process: `/Prompts/Extraction/Questions Prompt.md` using retrieved chunks → `questions_extract.md`  
+- **PROMPT 4:** Timeline
+  - AUTO-EXECUTE: `python3 scripts/vector_query.py --query="deadline timeline schedule submission dates milestones" --section="timeline" --top_k=10 --output="temp_timeline_context.md"`
+  - Process: `/Prompts/Extraction/Timeline Prompt.md` using retrieved chunks → `timeline_extract.md`
+- **PROMPT 5:** Evaluation
+  - AUTO-EXECUTE: `python3 scripts/vector_query.py --query="evaluation scoring criteria selection process assessment" --section="evaluation" --top_k=10 --output="temp_evaluation_context.md"`
+  - Process: `/Prompts/Extraction/Evaluation Prompt.md` using retrieved chunks → `evaluation_extract.md`
 
 **DEBUG TRACKING for each:**
 - Start time, end time, duration

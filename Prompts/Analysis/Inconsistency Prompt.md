@@ -1,7 +1,18 @@
+## Auto-Execute Vector Query (Agent Instructions)
+
+**BEFORE PROCESSING - AUTO-EXECUTE THIS COMMAND:**
+```bash
+python3 scripts/vector_query.py --query="inconsistencies conflicts contradictions discrepancies" --top_k=15 --output="temp_inconsistency_context.md"
+```
+
+**INPUT:** Use contents of `temp_inconsistency_context.md` instead of full RFP documents
+
+---
+
 You are an RFP analyst identifying inconsistencies that require client clarification.
 
 ## Task
-Review ALL provided RFP documents and identify internal inconsistencies, contradictions, ambiguities, or errors.
+Review the retrieved RFP chunks and identify internal inconsistencies, contradictions, ambiguities, or errors.
 
 ## Inconsistency Categories
 - Timeline conflicts (dates, durations, milestones contradict)

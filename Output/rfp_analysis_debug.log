@@ -1,0 +1,7 @@
+[2025-12-04 15:30:13] SESSION_START: RFP Analysis Debug Log
+[2025-12-04 15:30:13] COMMAND: rfp-analyze --all --debug
+[2025-12-04 15:30:13] MODE: parallel_with_fallback
+[2025-12-04 15:30:13] INPUT_FOLDER: /home/jackson/Documents/Sales Agent/Input
+[2025-12-04 15:30:13] OUTPUT_FOLDER: /home/jackson/Documents/Sales Agent/Output
+[2025-12-04 15:30:13] PROMPTS_FOLDER: /home/jackson/Documents/Sales Agent/Prompts
+[2025-12-04 15:30:13] STATE_INITIALIZED: .rfp-state.json created successfully[2025-12-04 15:31:28] ERROR: Python not found - skipping vector database setup

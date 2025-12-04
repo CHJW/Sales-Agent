@@ -1,0 +1,49 @@
+{
+  "session": {
+    "id": "rfp_analysis_20251204_153013",
+    "started": "2025-12-04 15:30:13",
+    "command": "rfp-analyze --all --debug",
+    "mode": "parallel_with_fallback"
+  },
+  "execution": {
+    "current_phase": 0,
+    "phase_status": {
+      "0": "pending",
+      "1": "pending", 
+      "2A": "pending",
+      "2B": "pending",
+      "3": "pending",
+      "4": "pending"
+    },
+    "running_prompts": [],
+    "completed_prompts": [],
+    "failed_prompts": [],
+    "execution_log": [
+      {
+        "timestamp": "2025-12-04 15:30:13",
+        "action": "session_initialized",
+        "details": "RFP analysis session started with full debug mode"
+      }
+    ],
+    "session_stats": {
+      "total_prompts": 0,
+      "successful_prompts": 0,
+      "failed_prompts": 0,
+      "skipped_prompts": 0,
+      "total_tokens": 0,
+      "estimated_cost": 0.0
+    }
+  },
+  "user_inputs": {
+    "opportunity_type": "",
+    "competitors": [],
+    "win_themes": [],
+    "additional_context": ""
+  },
+  "debug": {
+    "verbose": true,
+    "log_file": "rfp_analysis_debug.log",
+    "checkpoint_interval": "per_prompt",
+    "error_details": []
+  }
+}

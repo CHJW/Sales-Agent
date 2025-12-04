@@ -1,4 +1,15 @@
-Extract all dates and deadlines from this RFP into categorised tables.
+## Auto-Execute Vector Query (Agent Instructions)
+
+**BEFORE PROCESSING - AUTO-EXECUTE THIS COMMAND:**
+```bash
+python3 scripts/vector_query.py --query="deadline timeline schedule submission dates milestones" --section="timeline" --top_k=10 --output="temp_timeline_context.md"
+```
+
+**INPUT:** Use contents of `temp_timeline_context.md` instead of full RFP documents
+
+---
+
+Extract all dates and deadlines from the retrieved timeline chunks into categorised tables.
 
 REQUIRED CATEGORIES (always include):
 1. RFP Process — submission, Q&A, briefings, addenda, offer validity, award
@@ -30,5 +41,6 @@ ABBREVIATIONS:
 Sort each table by date ascending (explicit dates first, then relative).
 
 OUTPUT:
-- Save as "Timelines.md" in the output folder.
+- Save as "timeline_extract.md" in the output folder.
 - Tables only. No introduction, no summary, no commentary between tables.
+- Note at end: "Extracted from [X] vector chunks covering timeline information"

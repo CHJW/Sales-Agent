@@ -1,0 +1,17 @@
+{
+  "query_id": "abc123",
+  "timestamp": "2024-12-04T15:21:30.000Z", 
+  "query": "timeline milestones and deadlines",
+  "section_filter": "timeline",
+  "results": {
+    "chunks_found": 5,
+    "total_time_seconds": 0.167,
+    "db_connection_time": 0.012,
+    "model_load_time": 0.125,
+    "search_time": 0.030
+  },
+  "performance": {
+    "chunks_per_second": 29.94,
+    "search_efficiency": "fast"
+  }
+}
