@@ -74,10 +74,13 @@ def query_rfp_database(query, db_path, top_k=10, section_filter=None, enable_deb
     if enable_debug:
         print(f"🧠 [VECTOR-{query_hash}] Model loading: {model_load_time:.3f}s")
     
+    # Compute query embedding using the same model
+    query_embedding = model.encode([query]).tolist()
+
     # Perform search with timing
     search_start = time.time()
     results = collection.query(
-        query_texts=[query],
+        query_embeddings=query_embedding,
         n_results=top_k,
         where={"section_type": section_filter} if section_filter else None
     )
