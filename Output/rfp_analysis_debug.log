@@ -1,7 +1,32 @@
-[2025-12-04 15:30:13] SESSION_START: RFP Analysis Debug Log
-[2025-12-04 15:30:13] COMMAND: rfp-analyze --all --debug
-[2025-12-04 15:30:13] MODE: parallel_with_fallback
-[2025-12-04 15:30:13] INPUT_FOLDER: /home/jackson/Documents/Sales Agent/Input
-[2025-12-04 15:30:13] OUTPUT_FOLDER: /home/jackson/Documents/Sales Agent/Output
-[2025-12-04 15:30:13] PROMPTS_FOLDER: /home/jackson/Documents/Sales Agent/Prompts
-[2025-12-04 15:30:13] STATE_INITIALIZED: .rfp-state.json created successfully[2025-12-04 15:31:28] ERROR: Python not found - skipping vector database setup
+[2025-12-04T05:22:00Z] RFP ANALYSIS SESSION INITIALIZED
+========================================
+Session ID: rfp_analysis_20251204_052200
+Command: rfp-analyze --all --debug
+Mode: parallel_with_fallback
+Debug: ENABLED
+
+[2025-12-04T05:22:00Z] ENVIRONMENT VALIDATION
+- Input folder: /home/user/Sales-Agent/Input (VERIFIED)
+- Output folder: /home/user/Sales-Agent/Output (VERIFIED)
+- Prompts folder: /home/user/Sales-Agent/Prompts (VERIFIED)
+
+[2025-12-04T05:22:00Z] INPUT FILES DETECTED
+- test rfp document.pdf (49KB) - Cloud Services RFP from TestCorp Solutions
+- test rfp document.docx (6KB)
+- test_pricing_matrix.csv (1KB) - Pricing breakdown
+
+[2025-12-04T05:22:00Z] OUTPUT DIRECTORIES CREATED
+- /Output/extracts
+- /Output/analysis
+- /Output/summary
+
+[2025-12-04T05:22:01Z] STEP 1 COMPLETE: State management initialized
+
+[2025-12-04T05:22:02Z] STEP 2: VECTOR DATABASE SETUP
+- Checking for vector database dependencies...
+- chromadb: NOT INSTALLED
+- sentence-transformers: NOT INSTALLED
+- FALLBACK MODE ACTIVATED: Using direct document analysis
+- Vector DB setup skipped - proceeding with full document context
+- RFP document content loaded directly from PDF (4 pages)
+
